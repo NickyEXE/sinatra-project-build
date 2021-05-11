@@ -1,0 +1,21 @@
+<h1><%= @shark.name %></h1>
+<p>Color: <%= @shark.color %></p>
+<p>Age: <%= @shark.age %></p>
+
+<% if flash[:birthday] %>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/U2N56cX7Bpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% end %>
+
+<p>Owner: <a href="/users/<%=@shark.user.id%>"><%= @shark.user.username %></a></p>
+
+<a href="/sharks/<%= @shark.id %>/edit">Edit <%= @shark.name %></a>
+
+<form action="/sharks/<%= @shark.id %>/birthday" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="submit" value="It's <%= @shark.name %>'s birthday!!!!!">
+</form>
+
+<form action="/sharks/<%= @shark.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this Shark!">
+</form>

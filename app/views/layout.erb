@@ -18,7 +18,10 @@
       <nav>
         <% if logged_in? %>
           <a href="/logout">Log Out</a> |
-          <a href="/users">All Users</a>
+          <a href="/profile">Profile</a> |
+          <a href="/users">All Users</a> |
+          <a href="/sharks">All Sharks</a> |
+          <a href="/sharks/new">New Shark</a>|
         <% else %>
           <a href="/users/new">Sign Up!</a> |
           <a href="/login">Login!</a>
