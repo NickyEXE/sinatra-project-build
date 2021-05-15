@@ -7,6 +7,6 @@
   <label for="color">Color:</label><br>
   <input type="text" id="color" name="shark[color]" value=<%= @shark.color %>><br>
   <label for="age">Age:</label><br>
-  <input type="number" id="age" name="shark[age]" min="0" value=<%= @shark.age %>><br>
+  <input type="number" id="age" name="shark[age]" min="0" max="450000000" value=<%= @shark.age %>><br>
   <input type="submit" value="Adopt a Shark!">
 </form>

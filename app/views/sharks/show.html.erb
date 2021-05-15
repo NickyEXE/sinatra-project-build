@@ -8,14 +8,17 @@
 
 <p>Owner: <a href="/users/<%=@shark.user.id%>"><%= @shark.user.username %></a></p>
 
-<a href="/sharks/<%= @shark.id %>/edit">Edit <%= @shark.name %></a>
 
-<form action="/sharks/<%= @shark.id %>/birthday" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <input type="submit" value="It's <%= @shark.name %>'s birthday!!!!!">
-</form>
+<% if current_user == @shark.user %>
+  <a href="/sharks/<%= @shark.id %>/edit">Edit <%= @shark.name %></a>
 
-<form action="/sharks/<%= @shark.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete this Shark!">
-</form>
+  <form action="/sharks/<%= @shark.id %>/birthday" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="submit" value="It's <%= @shark.name %>'s birthday!!!!!">
+  </form>
+
+  <form action="/sharks/<%= @shark.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete this Shark!">
+  </form>
+<% end %>

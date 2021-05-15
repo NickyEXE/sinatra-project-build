@@ -1,5 +1,10 @@
 <h1>LOOK SHARKS</h1>
 <ul>
+<form method="get" action="/sharks">
+  <input type="text" name="search">
+  <input type="submit" value="Search for a shark!">
+</form>
+
 <% @sharks.each do |shark| %>
   <li><a href="sharks/<%=shark.id%>"><%= shark.name %></a></li>
 <% end %>
